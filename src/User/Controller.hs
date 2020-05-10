@@ -1,7 +1,7 @@
 module User.Controller where
 
-import User.User
-import Schema
+import Butler.Schema
+import Model
 
-indexUsers :: [User]
-indexUsers = [User 1 "foo"]
+indexUsers :: [User Model 'Resolved]
+indexUsers = [User 1 "foo" [] []]

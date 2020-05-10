@@ -30,6 +30,8 @@ dependencies:
 
 default-extensions:
   - OverloadedStrings
+  - StandaloneDeriving
+  - DataKinds
 
 library:
   source-dirs: src

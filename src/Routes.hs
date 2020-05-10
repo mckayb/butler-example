@@ -1,18 +1,17 @@
-{-# LANGUAGE DataKinds     #-}
 {-# LANGUAGE TypeOperators #-}
 
 module Routes where
 
 import Data.Text (Text)
-import Todo.Todo
-import User.User
 import User.Controller
 import Butler.Routing
+import Model
+import Butler.Schema
 
-type Routes = "todo" :> Get '[JSON] [User]
+type Routes = "users" :> Get '[JSON] [User Model 'Resolved]
 
 api :: Proxy Routes
 api = Proxy
 
 server :: Server Routes
-server = return $ indexUsers
+server = return indexUsers

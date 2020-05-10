@@ -1,7 +1,6 @@
 module Schema where
 
 import Data.Text (Text)
-import User.User
 
 -- data Relationship = HasOne | BelongsTo | HasMany | BelongsToMany
 
