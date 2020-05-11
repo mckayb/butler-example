@@ -2,7 +2,6 @@
 
 module Routes where
 
-import Data.Text (Text)
 import User.Controller
 import Butler.Routing
 import Model
