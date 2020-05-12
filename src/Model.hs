@@ -10,7 +10,7 @@ import Butler.Schema
 import GHC.Generics (Generic)
 import Data.Text (Text)
 import Data.Aeson (ToJSON(toJSON))
-import Butler.TypeInformation (TableSchema, ModelSelectors(modelSelectors))
+import Butler.TypeInformation (TableSchema, ModelSelectors(schema))
 import qualified Data.Aeson as Aeson
 import qualified Data.Char as Char
 
@@ -77,7 +77,7 @@ deriving instance Show (Model 'Resolved)
 deriving instance Show (Model 'Unresolved)
 
 currentModelMigration :: TableSchema
-currentModelMigration = modelSelectors @(Model 'Unresolved)
+currentModelMigration = schema @Model
 
 {-
 data User model m = User
