@@ -25,9 +25,6 @@ deriving instance ToJSON (Lazy Model User)
 instance ToJSON (User Model 'Resolved) where
     toJSON = Aeson.genericToJSON Aeson.defaultOptions { Aeson.fieldLabelModifier = fmap Char.toLower . Prelude.drop 4 }
 
--- TODO: Posts to Tags is actually a many to many, as referenced by the array of foreign id's in each of them
--- We need to find a way so that when we run modelSelectors @(Model 'Unresolved), that it generates a bridge table
--- instead of saying that there's an id in each of the tables.
 data Post model m = Post
     { postId :: Id model m Int
     , postTitle :: Text
