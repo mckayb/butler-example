@@ -2,10 +2,11 @@
 
 module Routes where
 
-import User.Controller
+import Controllers.UserController
 import Butler.Routing
 import Model
 import Butler.Schema
+import Models.User
 
 type Routes = "users" :> Get '[JSON] [User Model 'Resolved]
 
